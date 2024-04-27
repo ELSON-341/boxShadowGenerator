@@ -97,7 +97,6 @@ h2 {
 /* área de geração */
 #generated-rule p {
     margin-bottom: .5rem;
-    /* margin-left: .5rem; */
 }
 
 #rules-area {
@@ -110,8 +109,18 @@ h2 {
 }
 
 
-@media(max-width: 460px) {
+@media(max-width: 705px) {
     html {
         font-size: 90%;
+    }
+
+    #box-shadow-generator {
+        gap: .5rem;
+    }
+
+    #preview #box {
+        width: 300px;
+        height: 250px;
+        margin: 0 auto;
     }
 }
