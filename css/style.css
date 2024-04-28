@@ -145,5 +145,10 @@ h2 {
             width: 200px;
             height: 150px;
         }
+
+        #rules-area {
+            overflow-x: scroll;
+            width: 300px;
+        }
     }
 }
