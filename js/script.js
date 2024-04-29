@@ -8,8 +8,8 @@ class BoxShadowGenerator {
         verticalRef,
         blur,
         blurRef,
-        sread,
-        sreadRef,
+        spread,
+        spreadRef,
         previewBox,
         rule,
         webkitRule,
@@ -21,8 +21,8 @@ class BoxShadowGenerator {
         this.verticalRef = verticalRef
         this.blur = blur
         this.blurRef = blurRef
-        this.sread = sread
-        this.sreadRef = sreadRef
+        this.spread = spread
+        this.spreadRef = spreadRef
         this.previewBox = previewBox
         this.rule = rule
         this.webkitRule = webkitRule
@@ -33,14 +33,14 @@ class BoxShadowGenerator {
         this.horizontalRef.value = this.horizontal.value
         this.verticalRef.value = this.vertical.value
         this.blurRef.value = this.blur.value
-        this.sreadRef.value = this.sread.value
+        this.spreadRef.value = this.spread.value
 
         this.applyRule()
         this.showRule()
     }
 
     applyRule() {
-        this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.sreadRef.value}px  #000`
+        this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px  #000`
         this.currentRule = this.previewBox.style.boxShadow
     }
 
@@ -49,6 +49,29 @@ class BoxShadowGenerator {
         this.webkitRule.innerText = this.currentRule 
         this.mozRule.innerText = this.currentRule 
     }
+
+    updateValue(type, value) {
+        switch(type) {
+            case 'horizontal':
+                this.horizontalRef.value = value
+                break
+            
+            case 'vertical':
+                this.verticalRef.value = value
+                break
+            
+            case 'blur':
+                this.blurRef.value = value
+                break
+            
+            case 'spread':
+                this.spreadRef.value = value
+                break
+        }
+
+        this.applyRule()
+        this.showRule() 
+    } 
 }
 
 // Seleção de elementos 
@@ -61,8 +84,8 @@ const verticalRef = document.querySelector('#vertical-value')
 const blur = document.querySelector('#blur')
 const blurRef = document.querySelector('#blur-value')
 
-const sread = document.querySelector('#spread')
-const sreadRef = document.querySelector('#spread-value')
+const spread = document.querySelector('#spread')
+const spreadRef = document.querySelector('#spread-value')
 
 const previewBox = document.querySelector('#box')
 
@@ -77,8 +100,8 @@ const boxShadow  = new BoxShadowGenerator(
     verticalRef,
     blur,
     blurRef,
-    sread,
-    sreadRef,
+    spread,
+    spreadRef,
     previewBox,
     rule,
     webkitRule,
@@ -88,3 +111,27 @@ const boxShadow  = new BoxShadowGenerator(
 boxShadow.initialize()
 
 // Eventos
+horizontal.addEventListener('input', (e) => {
+    const value = e.target.value
+
+    boxShadow.updateValue('horizontal', value)
+})
+
+vertical.addEventListener('input', (e) => {
+    const value = e.target.value
+
+    boxShadow.updateValue('vertical', value)
+})
+
+blur.addEventListener('input', (e) => {
+    const value = e.target.value
+
+    boxShadow.updateValue('blur', value)
+})
+
+spread.addEventListener('input', (e) => {
+    const value = e.target.value
+
+    boxShadow.updateValue('spread', value)
+})
+
