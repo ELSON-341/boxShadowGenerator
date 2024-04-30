@@ -91,6 +91,16 @@ h2 {
     text-align: center;
 }
 
+/* Novas funcinalidades */
+#color-value {
+    min-width: 100px;
+}
+
+#inset {
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+}
 /* preview */
 
 #preview {
@@ -109,23 +119,36 @@ h2 {
 }
 
 #rules-area {
-    background-color: #d3dded;
+    background-color: rgb(173, 161, 161);
     max-width: 1000px;
     margin: 0 auto;
     border: 2px solid rgba(4, 161, 122, 0.993);
     margin: 0 auto .5rem;
-    padding-left: .5rem;
+    padding: .5rem;
+    transition: .2s linear;
+    cursor: pointer;
+    text-align: center;
 }
 
+#rules-area:hover {
+    background-color: #dfdfdf;
+}
+
+#copy-instructions {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
 
 @media(max-width: 928px) {
     #preview #box {
         width: 15rem;
         height: 15rem;
+        margin: 0 auto;
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 625px) {
     html {
         font-size: 90%;
     }
@@ -146,9 +169,8 @@ h2 {
             height: 150px;
         }
 
-        #rules-area {
+        #scroll {
             overflow-x: scroll;
-            width: 300px;
         }
     }
 }
