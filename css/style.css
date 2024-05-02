@@ -96,6 +96,10 @@ h2 {
     min-width: 100px;
 }
 
+#opacity-value {
+    min-width: 40px;
+}
+
 #inset {
     align-self: flex-start;
     width: 20px;
@@ -167,10 +171,6 @@ h2 {
         #preview #box {
             width: 200px;
             height: 150px;
-        }
-
-        #scroll {
-            overflow-x: scroll;
         }
     }
 }
