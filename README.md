@@ -1,4 +1,5 @@
 # Gerador de Box Shadow
+Desenvolvedo: HTML, CSS, JavaScript (POO) 
 
 Este projeto é um gerador de box shadow com as seguintes configurações:
 
